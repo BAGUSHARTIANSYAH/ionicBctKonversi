@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row justify-content-center margin-top>
+    <ion-col col-10>
+        <ion-item no-padding color="transparent">
+            <ion-label color="primary">Konstanta (MM)=</ion-label>
+            <ion-input type="text" placeholder="Panjang" [(ngModel)]="pageBCT.value.Konstanta"></ion-input>
+        </ion-item>
+        <ion-item no-padding color="transparent">
+          <ion-label color="primary">TAKE UP FACTOR BF =</ion-label>
+          <ion-input type="text" placeholder="Panjang" [(ngModel)]="pageBCT.value.TakeUpFactorBF"></ion-input>
+        </ion-item>
+        <ion-item no-padding color="transparent">
+          <ion-label color="primary">TAKE UP FACTOR CF =</ion-label>
+          <ion-input type="text" placeholder="Panjang" [(ngModel)]="pageBCT.value.TakeUpFactorCF"></ion-input>
+      </ion-item>
+      <ion-item no-padding color="transparent">
+        <ion-label color="primary">TAKE UP FACTOR AF =</ion-label>
+        <ion-input type="text" placeholder="Panjang" [(ngModel)]="pageBCT.value.TakeUpFactorAF"></ion-input>
+      </ion-item> 
+    </ion-col>
+  </ion-row>
+  <ion-card-content>
+      <ion-button  (click)="SAVE()" >SAVE</ion-button>       
+  </ion-card-content>
+</ion-content>

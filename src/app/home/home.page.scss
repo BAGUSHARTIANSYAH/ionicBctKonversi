@@ -1,0 +1,13 @@
+.ion-col{
+    background: gray;
+    border: solid black;
+    border: 1ch;
+}
+.forecast_container{
+    overflow-x: scroll!important;
+    overflow-y: hidden;
+    word-wrap: break-word;
+    height:20vw;
+    font-size:0.8em;
+    font-weight:300;
+}

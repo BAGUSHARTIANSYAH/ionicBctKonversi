@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none"> 
+        <ion-icon name="grid"></ion-icon>
+        <ion-title >menu</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>  
+      <ion-item color="primary">
+        <blockquote>
+            <ion-button routerLink="/bct" color="light" position="fixed"  style="width: 100px; text-align: center;">bct</ion-button>
+        </blockquote>        
+      </ion-item>      
+      <ion-item color="secondary">
+          <blockquote>
+              <ion-button routerLink="/konversi" color="light" position="fixed"  style="width: 100px; text-align: center;" >KONVERSI</ion-button>
+          </blockquote>
+      </ion-item>
+      <ion-item color="tertiary">
+        <blockquote>
+            <ion-button (click)="exit()" color="light" position="fixed"  style="width: 100px; text-align: center;" >KONVERSI</ion-button>
+        </blockquote>
+    </ion-item>
+    </ion-item-group>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+        <ion-icon name="laptop"></ion-icon>
+        <ion-title>Program konversi</ion-title>
+    </ion-item>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+      <ion-label >Dari Satuan</ion-label>
+      <ion-select [selectedText]="select.selectDari" (ionChange)="Satuan($event)">        
+        <ion-select-option *ngFor="let data of selectkonversi">{{data.satuan}}</ion-select-option>
+      </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Menjadi Satuan </ion-label>
+    <ion-select [selectedText]="select.selectTo" (ionChange)="selectToaction($event)">        
+      <ion-select-option *ngFor="let data of selectToKonversi">{{data.text}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item style="margin-left: 40%; margin-right: 40%;" lines="none" (click)="tukar()">
+      <ion-icon name="repeat"> </ion-icon>
+  </ion-item>  
+  <ion-item>
+    <ion-label >Angka </ion-label>
+    <ion-item>
+        <ion-input type="text" placeholder="Panjang" [(ngModel)]="select.nilai"></ion-input>
+    </ion-item>
+  </ion-item>
+  <ion-card-content>
+      <ion-button  (click)="hitung()" >HITUNG</ion-button>
+  </ion-card-content>
+  <ion-item>
+    <!-- <ion-label >Hasil = {{select.hasil}}</ion-label>       -->
+    <ion-label >Hasil = {{select.hasil1}} </ion-label>    
+  </ion-item>
+  <ion-item>
+      <ion-label >Digit Pembulatan</ion-label>      
+      <ion-item>
+          <ion-input type="text" placeholder="Digit Pembulatan" (ionChange)="hitung()" [(ngModel)]="select.digitpembulatan"></ion-input>
+      </ion-item>
+    </ion-item>  
+</ion-content>

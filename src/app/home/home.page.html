@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      App BCT
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+          Rumus BCT =5,87 X ECT X √h X √ (2P + 2L)
+      </ion-label>
+    </ion-item>    
+    <ion-grid>
+        <!-- <ion-col><ion-card-subtitle position="fixed"></ion-card-subtitle> <ion-card-title></ion-card-title></ion-col> -->
+        <ion-row style="background-color: darkcyan;">
+          <ion-col><ion-card-header color="primary">Konstanta</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">Box Compression (Kgf)</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">Edge Crush Test (Kgf/cm)</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">Tebal  sheet (cm)</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">Panjang box (cm)</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">Lebar box (cm)</ion-card-header></ion-col>
+        </ion-row>
+        <ion-row style="background-color: antiquewhite;"> 
+            <ion-col><ion-item color="secondary"><ion-input type="text" [(ngModel)]="Konstanta"></ion-input></ion-item></ion-col>
+            <ion-col><ion-item>BCT</ion-item></ion-col>
+            <ion-col><ion-item>ECT</ion-item></ion-col>
+            <ion-col><ion-item>H</ion-item></ion-col>
+            <ion-col><ion-item>P</ion-item></ion-col>
+            <ion-col><ion-item>L</ion-item></ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+  <ion-item>
+      <ion-label class="ion-text-wrap">
+          SPESIFIKASI  BOX PT. BATARA ELOK SEMESTA TERPADU
+      </ion-label>
+    </ion-item> 
+  <ion-grid> 
+      <!-- <ion-card-subtitle position="fixed"></ion-card-subtitle> -->
+      <!-- <ion-row>
+          <ion-col col-3>AHNO1-5052-15 BHABHT @15 Kg</ion-col>          
+      </ion-row> -->
+      <ion-row style="background-color: darkcyan;">
+        <ion-col><ion-card-header color="primary">Item</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">MM</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">CM</ion-card-header></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+        <ion-col><ion-item>PANJANG (mm)</ion-item></ion-col>
+        <ion-col><ion-item color="secondary"><ion-input [(ngModel)]="panjangMM"></ion-input></ion-item></ion-col>
+        <ion-col><ion-item><ion-label >{{panjangCM}}</ion-label></ion-item></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+          <ion-col><ion-item>LEBAR (mm)</ion-item></ion-col>
+          <ion-col><ion-item color="secondary"><ion-input [(ngModel)]="lebarMM"></ion-input></ion-item></ion-col>
+          <ion-col><ion-item><ion-label >{{lebarCM}}</ion-label></ion-item></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+          <ion-col><ion-item >TINGGI (mm)</ion-item></ion-col>
+          <ion-col><ion-item color="secondary"><ion-input [(ngModel)]="tinggiMM"></ion-input></ion-item></ion-col>
+          <ion-col><ion-item><ion-label >{{tinggiCM}}</ion-label></ion-item></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+        <ion-col><ion-item>FLUTE</ion-item></ion-col>
+        <ion-col><ion-item color="secondary"><ion-input [(ngModel)]="Flute"></ion-input></ion-item></ion-col>
+        <ion-col><ion-item></ion-item></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+        <ion-col><ion-item>TEBAL SHEET</ion-item></ion-col>
+        <ion-col><ion-item><ion-label>{{TebalSheet}}</ion-label></ion-item></ion-col>
+        <ion-col><ion-item></ion-item></ion-col>
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;">
+        <ion-col><ion-item>SUBSTANCE SINGLE WALL</ion-item></ion-col>
+        <ion-col><ion-item><ion-label>K = {{SubtanceSW_K}} </ion-label></ion-item></ion-col>
+        <ion-col><ion-item><ion-label>M = {{SubtanceSW_M}} / K = {{SubtanceSW_KK}} </ion-label></ion-item></ion-col>
+      </ion-row>
+      <!-- <ion-checkbox color="secondary" [(ngModel)]="CheckBox.sub_K" (ionChange)="CheckBoxSubtance(1)"></ion-checkbox>
+      <ion-checkbox color="secondary" [(ngModel)]="CheckBox.sub_M" (ionChange)="CheckBoxSubtance(2)"></ion-checkbox> -->
+    </ion-grid>    
+    <ion-item>
+        <ion-label class="ion-text-wrap">
+            PERHITUNGAN EDGE CRUSH TEST (ECT)
+        </ion-label>
+      </ion-item> 
+    <ion-grid>
+      <!-- <ion-card-title></ion-card-title> -->
+      <ion-row style="background-color: darkcyan;">
+        <ion-col><ion-card-header color="primary">FACE LINER</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">TAKE UP FACTOR BF</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">BF /CF / AF</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">BACK LINER</ion-card-header></ion-col>
+
+        <ion-col><ion-card-header color="primary">TAKE UP FACTOR CF</ion-card-header></ion-col>
+        <ion-col><ion-card-header color="primary">ECT BF</ion-card-header></ion-col>        
+      </ion-row>
+      <ion-row style="background-color: antiquewhite;"> 
+          <ion-col><ion-item><ion-label>{{FaceLiner}}</ion-label></ion-item></ion-col>
+          <ion-col><ion-item><ion-label>{{TakeUpFactorBF}}</ion-label></ion-item></ion-col>
+          <ion-col><ion-item><ion-label>{{BCAF}}</ion-label></ion-item></ion-col>
+          <ion-col><ion-item><ion-label>{{BlackLiner}}</ion-label></ion-item></ion-col>
+  
+          <ion-col><ion-item><ion-label>{{TakeUpFactorCF}}</ion-label></ion-item></ion-col>
+          <ion-col><ion-item><ion-label>{{ECT_BF}}</ion-label></ion-item></ion-col>         
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+        <ion-label class="ion-text-wrap">
+            
+        </ion-label>
+      </ion-item> 
+    <ion-grid >
+        <!-- <ion-card-title>PERHITUNGAN EDGE CRUSH TEST (ECT)</ion-card-title> -->
+        <ion-row style="background-color: darkcyan;">          
+          <ion-col><ion-card-header color="primary">ECT CF</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">ECT AF</ion-card-header></ion-col>
+  
+          <ion-col><ion-card-header color="primary">TAKE UP FACTOR AF</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">FACE LINER 2</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">BF / AF</ion-card-header></ion-col>
+          <ion-col><ion-card-header color="primary">MIDDLE LINER</ion-card-header></ion-col>
+          
+        </ion-row>
+        <ion-row style="background-color: antiquewhite;">             
+            <ion-col><ion-item><ion-label>{{ECT_CF}}</ion-label></ion-item></ion-col>
+            <ion-col><ion-item><ion-label>{{ECT_AF}}</ion-label></ion-item></ion-col>
+    
+            <ion-col><ion-item><ion-label>{{TakeUpFactorAF}}</ion-label></ion-item></ion-col>
+            <ion-col><ion-item><ion-label>{{FaceLiner2}}</ion-label></ion-item></ion-col>
+            <ion-col><ion-item><ion-label>{{BForAF}}</ion-label></ion-item></ion-col>
+            <ion-col><ion-item><ion-label>{{MiddleLiner}}</ion-label></ion-item></ion-col>
+                
+        </ion-row>
+      </ion-grid>
+      <ion-item>
+          <ion-label class="ion-text-wrap">
+              
+          </ion-label>
+        </ion-item> 
+      <ion-grid>
+          <!-- <ion-card-title>PERHITUNGAN EDGE CRUSH TEST (ECT)</ion-card-title> -->
+          <ion-row style="background-color: darkcyan;">                  
+            <ion-col> <ion-card-header color="primary">ECT BCF</ion-card-header></ion-col>
+            <ion-col><ion-card-header color="primary">ECT ACF</ion-card-header></ion-col>  
+            <ion-col><ion-card-header color="primary">STD ECT</ion-card-header></ion-col>  
+            <ion-col><ion-card-header color="primary">BACK LINER</ion-card-header></ion-col>       
+          </ion-row>
+          <ion-row style="background-color: antiquewhite;">                         
+              <ion-col><ion-item><ion-label>{{BackLiner}}</ion-label></ion-item></ion-col>
+              <ion-col><ion-item><ion-label>{{ECT_BCF}}</ion-label></ion-item></ion-col>
+              <ion-col><ion-item><ion-label>{{ECT_ACF}}</ion-label></ion-item></ion-col>
+              <ion-col><ion-item><ion-label>{{STD_ECT}} Kgf/cm</ion-label></ion-item></ion-col>
+          </ion-row>
+        </ion-grid>
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+          Berapa ESTIMASI BCT ??
+      </ion-label>      
+    </ion-item> 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>JAWAB </ion-card-subtitle>      
+        <!-- <ion-card-title>Card Title</ion-card-title> -->
+      </ion-card-header>
+      
+      <ion-card-content>
+          <ion-button  (click)="Hitung()" >HITUNG</ion-button>
+          <ion-button   routerLink="/login">PINDAH PAGE</ion-button> <br>
+          BCT McKee = {{BCT_McKee}} Kgf
+          <ion-item>              
+              <ion-label>BCT McKee +20% = {{BCT_McKee20}} Kgf</ion-label>              
+              <ion-label>BCT McKee +30% = {{BCT_McKee30}} Kgf</ion-label>
+              
+            </ion-item>
+      </ion-card-content>
+    </ion-card>      
+</ion-content>
+
+<!-- <ion-content>
+  <ion-list>
+    <ion-item> 
+      <ion-label stacked>display</ion-label>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="inputValue"></ion-input>
+    </ion-item>    
+  </ion-list>
+</ion-content> -->
+
+

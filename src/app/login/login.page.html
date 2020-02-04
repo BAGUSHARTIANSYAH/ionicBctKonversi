@@ -1,0 +1,30 @@
+<ion-card style="height:100%; background-image: url('../../assets/icon/bg.jpg');  background-size: cover;">
+  <ion-card-header>
+      <!-- <ion-card-subtitle><div text-center><h4> Form Login </h4></div></ion-card-subtitle> -->
+      <!-- <ion-card-title>Card Title</ion-card-title> -->
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-grid>
+        <ion-row justify-content-center>
+          <div align-self-center >
+            <!-- <ion-card-subtitle><div text-center><h2>Login Form</h2></div></ion-card-subtitle>    -->
+                <div padding style="margin-top: 45%;">
+                    <ion-item>
+                      <ion-label no-margin><ion-icon item-start name="person"></ion-icon></ion-label>
+                      <ion-input text-uppercase  type="text" placeholder="Username" [(ngModel)]="User"></ion-input>
+                    </ion-item>
+                    <ion-item style="margin-top: 10px; background-color: rgba(255, 255, 255,50);">
+                      <ion-label no-margin><ion-icon item-start name="key"></ion-icon></ion-label>
+                      <ion-item>
+                        <ion-input type="password" [type]="getType()" placeholder="Password" [(ngModel)]="Password"></ion-input>
+                        <ion-icon name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
+                      </ion-item>                        
+                    </ion-item>
+                </div>
+              <div padding><ion-button size="large" (click)="Login()"  expand="block">Login</ion-button></div>			
+          </div>
+        </ion-row>
+      </ion-grid>
+  </ion-card-content>
+  </ion-card>

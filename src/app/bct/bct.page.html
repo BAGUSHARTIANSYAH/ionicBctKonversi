@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none"> 
+        <ion-icon name="laptop"></ion-icon>
+        <ion-title>Program BCT</ion-title>
+        <ion-icon name="settings" size="large" routerLink="/setting"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row justify-content-center margin-top>
+      <ion-col col-10>
+        <ion-item no-padding color="transparent">
+          <ion-label color="primary">Panjang (MM) =</ion-label>
+          <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.panjangMM"></ion-input>
+        </ion-item>
+        <ion-item no-padding color="transparent">
+            <ion-label color="primary">Lebar (MM) =</ion-label>
+            <ion-input type="text" placeholder="Lebar" [(ngModel)]="value.lebarMM"></ion-input>
+        </ion-item>
+        <ion-item no-padding color="transparent">
+            <ion-label color="primary">Tinggi (MM) =</ion-label>
+            <ion-input type="text" placeholder="Tinggi" [(ngModel)]="value.tinggiMM"></ion-input>
+        </ion-item>
+        <ion-col col-10>
+            <ion-item no-padding color="transparent">
+                <ion-label color="primary">Konstanta (MM)=</ion-label>
+                <ion-label>{{value.Konstanta}}</ion-label>
+            </ion-item>
+        </ion-col>        
+        <ion-item no-padding color="transparent">
+            <ion-label color="primary">Flute =</ion-label>
+            <ion-select (ionChange)="selectedFlute($event)" [selectedText]="value.Flute">
+                <ion-select-option  *ngFor="let data of selectFlute">{{data.value}}</ion-select-option>                  
+            </ion-select>
+        </ion-item>                    
+        <ion-col *ngIf="value.SubtanctSelect[0].on">
+          <ion-item>
+            <ion-label color="secondary">K =</ion-label>
+            <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceSW_K"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label color="secondary">M =</ion-label>
+              <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceSW_M"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary">K =</ion-label>
+                <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceSW_KK"></ion-input>
+              </ion-item>
+        </ion-col>
+        <ion-col *ngIf="value.SubtanctSelect[1].on">
+            <ion-item>
+              <ion-label color="secondary">K =</ion-label>
+              <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceDW_KolomC"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="secondary">M =</ion-label>
+              <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceDW_KolomF"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="secondary">K =</ion-label>
+              <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceDW_Kolomi"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="secondary">M =</ion-label>
+              <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceDW_Koloml"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary">K =</ion-label>
+                <ion-input type="text" placeholder="Panjang" [(ngModel)]="value.SubtanceDW_Kolom0"></ion-input>
+              </ion-item>
+        </ion-col>        
+    </ion-col>
+  </ion-row>
+  <ion-card-content>
+      <ion-button  (click)="Hitung()" >HITUNG</ion-button>      
+      <ion-item>
+        <ion-label class="sizeResult">BCT McKee = {{value.BCT_McKee}} Kgf</ion-label>
+      </ion-item>
+      <ion-item>              
+        <ion-label class="sizeResult">BCT McKee +20% = {{value.BCT_McKee20}} Kgf</ion-label>                                
+      </ion-item>
+      <ion-item>
+          <ion-label class="sizeResult">BCT McKee +30% = {{value.BCT_McKee30}} Kgf</ion-label>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label class="sizeResult">Digit Pembulatan = </ion-label>
+        <ion-item>
+          <ion-input type="text"  placeholder="Panjang" [(ngModel)]="value.digitbulat"></ion-input>
+        </ion-item>
+    </ion-item> -->
+  </ion-card-content>
+</ion-content>
